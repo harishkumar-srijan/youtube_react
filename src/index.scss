@@ -1,0 +1,288 @@
+html,
+body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	text-rendering: optimizeLegibility;
+}
+
+a {
+	text-decoration: none !important;
+	color: black;
+	text-rendering: geometricPrecision;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+	height: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+	background-color: rgb(114, 113, 113);
+	border-radius: 3px;
+	height: 200px;
+}
+
+::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+h6 {
+	font-size: 0.7rem !important;
+	color: black;
+	font-weight: 400 !important;
+	text-decoration: none !important;
+}
+
+h4 {
+	font-weight: 400 !important;
+	font-size: 1em !important;
+	color: #000;
+	svg {
+		vertical-align: middle;
+	}
+}
+
+h5 {
+	font-weight: 400 !important;
+	font-size: 1em !important;
+}
+
+// Button
+.category-btn:hover {
+	background-color: #fc1503 !important;
+	color: white !important;
+}
+
+.category-btn:hover span {
+	color: white !important;
+}
+
+.react-player {
+	height: 77vh !important;
+	width: 100% !important;
+}
+
+.search-bar {
+	border: none;
+	outline: none;
+	width: 350px;
+	padding: 0 17px;
+	height: 35px;
+	border-radius: 4px;
+}
+
+.category-btn {
+	font-weight: normal !important;
+	text-transform: capitalize;
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+	cursor: pointer;
+	background: transparent;
+	outline: none;
+	border: none;
+
+	padding: 5px 9px;
+	margin: 5px 0px;
+	border-radius: 4px;
+	transition: all 0.3s ease;
+	svg {
+		font-size: 1.3rem;
+		margin-top: 3px;
+	}
+}
+
+.channel__name {
+	display: flex;
+	align-items: center;
+	justify-content: flex-start;
+}
+
+// Header
+header {
+	background-image: linear-gradient(120deg, #fdfde6, #cee5ec);
+	position: relative !important;
+	z-index: 1;
+
+	button {
+		color: black !important;
+	}
+	button[type='submit'] {
+		padding: 5px 9px;
+		svg {
+			font-size: 1.2rem;
+		}
+	}
+	.logo {
+		display: block;
+	}
+	.logosm {
+		display: none;
+		padding-top: 5px;
+	}
+}
+
+// common styling
+.video__container {
+	display: flex;
+	flex-wrap: nowrap;
+	flex-direction: inherit !important;
+	.video__container--sidebar {
+		width: 15%;
+		padding: 15px;
+		overflow-x: hidden;
+		transition: 0.3s ease-in;
+		&.menu__open {
+			width: 39px;
+			> div {
+				overflow: hidden;
+			}
+		}
+	}
+	.video__container--video-list {
+		width: calc(100% - 15%);
+		padding: 15px;
+		overflow: auto;
+		height: 92vh;
+		transition: 0.3s ease-in;
+		&.menu__open {
+			width: calc(100% - 39px);
+		}
+	}
+}
+
+.video__wrapper {
+	> div {
+		width: calc(100% / 4 - 13px);
+	}
+}
+
+.video__details--related {
+	.video__wrapper {
+		> div {
+			width: calc(100%);
+		}
+	}
+}
+
+.video__detail-text-wrapper {
+	display: flex;
+	justify-content: space-between;
+	padding-right: 15px;
+	p {
+		font-size: 0.8rem;
+		color: black;
+		svg {
+			margin-top: 2px;
+			display: inline;
+			vertical-align: top;
+			margin-left: 3px;
+			color: #6598a2;
+		}
+	}
+}
+
+.channel__name {
+	h6 {
+		font-size: 0.74em !important;
+	}
+}
+
+.MuiBox-root + .MuiPaper-root {
+	display: none;
+}
+
+@media screen and (max-width: 900px) {
+	.category-btn {
+		margin-bottom: 5px;
+	}
+	.video__container {
+		flex-wrap: wrap;
+		.video__container--sidebar {
+			width: calc(100% - 30px);
+			padding: 15px;
+			&.menu__open {
+				width: calc(100% - 30px);
+			}
+		}
+		.video__container--video-list {
+			width: 100%;
+			&.menu__open {
+				width: calc(100%);
+			}
+		}
+	}
+
+	.video__wrapper {
+		> div {
+			width: calc(calc(100% / 3 - 11px));
+		}
+	}
+
+	.video__details--related {
+		.video__wrapper {
+			flex-direction: unset;
+			width: 100%;
+			> div {
+				width: calc(100% / 3 - 11px);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 800px) {
+	.search-bar {
+		width: 220px;
+	}
+}
+
+@media screen and (max-width: 600px) {
+	header {
+		.logo {
+			display: none;
+		}
+		.logosm {
+			display: block;
+			padding-top: 5px;
+		}
+	}
+	.scroll-horizontal {
+		overflow: auto !important;
+	}
+
+	.react-player {
+		height: 45vh !important;
+	}
+	.search-bar {
+		width: 120px;
+	}
+	.video__wrapper {
+		> div {
+			width: calc(100% / 2 - 9px);
+		}
+	}
+	.video__details--related {
+		.video__wrapper {
+			> div {
+				width: calc(100% / 2 - 9px);
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.video__wrapper {
+		> div {
+			width: calc(calc(100%));
+		}
+	}
+
+	.video__details--related {
+		.video__wrapper {
+			> div {
+				width: calc(100%);
+			}
+		}
+	}
+}
